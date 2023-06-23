@@ -1,0 +1,16 @@
+---
+
+- hosts: servers
+  become: true
+  tasks:
+
+      
+  - name: Un-Install Apache package.
+    apt:
+      name: apache2
+      state: absent
+
+  - name: Remove php support for Apache
+    apt:
+     name: libapache2-mod-php
+     state: absent
