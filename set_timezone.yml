@@ -1,0 +1,9 @@
+---
+
+- hosts: servers
+  become: true
+  tasks:
+
+  - name: Set the time zone
+    timezone:
+      name: Europe/London
