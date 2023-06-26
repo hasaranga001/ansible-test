@@ -3,17 +3,12 @@
 - hosts: servers
   become: true
   tasks:
-
-  - name: Update repo
-    apt:
-     update_cache: yes
-          
-  - name: Install Apache package.
-    apt:
-      name: apache2
+         
+  - name: Install Apache and libapache2 piackage.
+    package:
+      name: 
+        - "{{ Apache_package }}"
+        - "{{ php_package }}"
       state: latest
+      update_cache: yes
 
-  - name: Add php support for Apache
-    apt:
-     name: libapache2-mod-php
-     state: latest
